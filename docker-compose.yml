@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  nexus:
+    container_name: nexus
+    image: nexus
+    build:
+      target: nexus
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 18081:8081
+    volumes:
+      - ./data:/opt/nexus/sonatype-work/ :rw
+    restart: always
+
+
+
+
